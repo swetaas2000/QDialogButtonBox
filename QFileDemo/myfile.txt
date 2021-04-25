@@ -1,0 +1,9 @@
+ QFile file("C:/Users/swetaa/OneDrive/Documents/QFileDemo/myfile.txt");
+   if(!file.open(QFile::WriteOnly | QFile::Text)) {
+       QMessageBox::warning(this,"Swetaa_212218104169","file not opened");
+   }
+   QTextStream out(&file);
+   QString text = ui->plainTextEdit->toPlainText();
+   out<<text;
+   file.flush();
+   file.close();
